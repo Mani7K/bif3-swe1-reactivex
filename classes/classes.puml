@@ -1,0 +1,15 @@
+@startuml Classes
+class Client {
+    +showContent(content: string)
+}
+
+class NewsProvider
+
+class Mail {
+    +content: string
+    +ad: bool
+}
+
+NewsProvider -- Mail : sends out >
+Mail -- Client : < shows
+@enduml

@@ -1,0 +1,28 @@
+@startuml Classes
+class Client {
+    +showContent(content: string)
+}
+
+class NewsProvider
+
+class Mail {
+    +content: string
+    +ad: bool
+}
+
+class Summary {
+    +content: string
+    +rating: int
+}
+
+interface ISlave {
+    +summarize(mail: Mail) : IObservable<Summary>
+}
+
+
+NewsProvider -- Mail : sends out >
+Mail -- Client : < shows
+
+Mail -- ISlave : < receives
+ISlave -- Summary : > creates
+@enduml
