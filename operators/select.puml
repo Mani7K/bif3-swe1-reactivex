@@ -1,0 +1,12 @@
+@startuml Select
+|News-Provider|
+start
+:Create Mail;
+|#AntiqueWhite|Select|
+:Receive Mail;
+:Convert to string;
+:Pass on;
+|Client|
+:Receive string;
+:Show content;
+@enduml

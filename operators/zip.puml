@@ -1,0 +1,30 @@
+@startuml Zip
+|News-Provider|
+start
+:Create Mail;
+|Where|
+:Receive Mail;
+if (Is Ad?) then (yes)
+    stop
+else (no)
+    :Pass on;
+endif
+|#AntiqueWhite|Zip|
+:Receive Mail;
+fork
+:Send Mail to Slave1;
+:Receive Summary;
+fork again
+:Send Mail to Slave2;
+:Receive Summary;
+end fork
+:Choose better summary;
+:Pass on;
+|Select|
+:Receive Summary;
+:Convert to string;
+:Pass on;
+|Client|
+:Receive string;
+:Show content;
+@enduml

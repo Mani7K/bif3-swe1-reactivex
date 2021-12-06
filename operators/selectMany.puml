@@ -1,0 +1,26 @@
+@startuml SelectMany
+|News-Provider|
+start
+:Create Mail;
+|Where|
+:Receive Mail;
+if (Is Ad?) then (yes)
+    stop
+else (no)
+    :Pass on;
+endif
+|#AntiqueWhite|SelectMany|
+:Receive Mail;
+:Send Mail to Slave;
+fork
+:Create summary;
+end fork
+:Pass on;
+|Select|
+:Receive Summary;
+:Convert to string;
+:Pass on;
+|Client|
+:Receive string;
+:Show content;
+@enduml

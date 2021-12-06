@@ -1,0 +1,10 @@
+@startuml Starting
+|News-Provider|
+start
+:Create Mail;
+|#AntiqueWhite|?|
+:?;
+|Client|
+:Receive string;
+:Show content;
+@enduml

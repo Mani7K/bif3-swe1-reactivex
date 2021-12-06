@@ -1,0 +1,19 @@
+@startuml Where
+|News-Provider|
+start
+:Create Mail;
+|#AntiqueWhite|Where|
+:Receive Mail;
+if (Is Ad?) then (yes)
+    stop
+else (no)
+    :Pass on;
+endif
+|Select|
+:Receive Mail;
+:Convert to string;
+:Pass on;
+|Client|
+:Receive string;
+:Show content;
+@enduml
